@@ -55,7 +55,7 @@
 					기억하기
 				</div>
 				<button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
-				<a href="${pageContext.request.contextPath}/registerPage.jsp">회원가입</a>
+				<a href="${pageContext.request.contextPath}/register/register">회원가입</a>
 				<p class="mt-5 mb-3 text-muted">© 21660003 강지호</p>
 			</form>
 		</div>
