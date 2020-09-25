@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+	
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,12 +20,12 @@
 <script defer
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 	charset="utf-8"></script>
-<title>회원가입 페이지</title>
+<title><spring:message code="register.title" /></title>
 </head>
 <body class="text-center">
 	<div class="container" id="main">
 		<div class="jumbotron">
-			<h4 class="mb-4">약관</h4>
+			<h4 class="mb-4"><spring:message code="register.term" /></h4>
 		
 			<form class="form-signin" method="post"
 				action="${pageContext.request.contextPath}/register/step2"
@@ -37,14 +39,14 @@
 					</div>
 					<div class="input-group-prepend">
 						<div class="input-group-text">
-						약관동의
+						<spring:message code="register.term.agree" />
 						</div>
 					</div>
 					
 				</div>
 				<hr class="mb-4">
 				<button id="btn_register" class="btn btn-primary btn-lg btn-block"
-					type="submit">다음단계</button>
+					type="submit"><spring:message code="register.next.btn" /></button>
 			</form>
 		</div>
 

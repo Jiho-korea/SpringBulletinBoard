@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,89 +20,56 @@
 <script defer
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"
 	charset="utf-8"></script>
-<title>회원가입 페이지</title>
+<title><spring:message code="register.title" /></title>
 </head>
 <body class="text-center">
 	<div class="container" id="main">
 		<div class="jumbotron">
-			<h4 class="mb-4">회원가입</h4>
+			<h4 class="mb-4">
+				<spring:message code="go.register" />
+			</h4>
 			<form:form action="${pageContext.request.contextPath}/register/step3"
 				method="post" cssClass="form-signin"
 				modelAttribute="registerRequest" onsubmit="return clickEvent()">
-
-				<form:input path="name" cssClass="form-control" placeholder="이름" />
-
+				<label><spring:message code="name" /> <form:input
+						path="name" cssClass="form-control" /> </label>
 				<br class="mb-4" />
-				<input type="number" class="form-control" name="sid"
-					placeholder="학번" id="sid" />
+				<label><spring:message code="sid" /> <input type="number"
+					class="form-control" name="sid" id="sid" /></label>
+
 				<br class="mb-4" />
 
 				<div class="row">
-					<div class="col-md-6 mb-3">
+					<div class="col-md-6 mb-1">
+						<label><spring:message code="password" /> <form:password
+								path="password" cssClass="form-control" /> </label>
 
-						<form:password path="password" cssClass="form-control"
-							placeholder="비밀번호" />
 
 					</div>
-					<div class="col-md-6 mb-3">
-						<form:password path="confirmPassword" cssClass="form-control"
-							placeholder="비밀번호 확인" />
-
+					<div class="col-md-6 mb-1">
+						<label><spring:message code="confirmPassword" /> <form:password
+								path="confirmPassword" cssClass="form-control" /></label>
 					</div>
 				</div>
 
-				<br class="mb-1" />
-				<input type="number" class="form-control"
-					name="grade" id="grade" placeholder="학년"/>
+				<br class="mb-4" />
+				<label><spring:message code="grade" /> <input type="number"
+					class="form-control" name="grade" id="grade" /></label>
 				<br class="mb-4">
+				<label> <spring:message code="subject" />
+					<form:input path="subject" cssClass="form-control" />
+				</label>
 
-				<form:input path="subject" cssClass="form-control" placeholder="학과" />
 
 				<br class="mb-4" />
 
 				<hr class="mb-4" />
 				<button id="btn_register" class="btn btn-primary btn-lg btn-block"
-					type="submit">회원가입</button>
+					type="submit">
+					<spring:message code="go.register" />
+				</button>
 			</form:form>
-
-
-			<!-- 
-			<form class="form-signin" method="post"
-				action="${pageContext.request.contextPath}/register/step3"
-				onsubmit="return clickEvent()">
-
-
-				<input type="text" class="form-control" name="name" placeholder="이름"
-					id="name" value="${registerRequest.name}" /> <br class="mb-4" /> <input
-					type="number" class="form-control" name="sid" placeholder="학번"
-					id="sid" value="${registerRequest.sid}" /> <br class="mb-4" />
-
-				<div class="row">
-					<div class="col-md-6 mb-3">
-
-						<input type="password" class="form-control" name="password"
-							id="password" placeholder="비밀번호" />
-					</div>
-					<div class="col-md-6 mb-3">
-						<input type="password" class="form-control" id="confirmPassword"
-							name="confirmPassword" placeholder="비밀번호 확인" />
-
-					</div>
-				</div>
-
-				<br class="mb-1" /> <input type="number" class="form-control"
-					name="grade" id="grade" placeholder="학년"
-					value="${registerRequest.grade}" /> <br class="mb-4"> <input
-					type="text" class="form-control" name="subject" id="subject"
-					placeholder="학과" value="${registerRequest.subject}" /> <br
-					class="mb-4" />
-
-				<hr class="mb-4" />
-				<button id="btn_register" class="btn btn-primary btn-lg btn-block"
-					type="submit">회원가입</button>
-			</form> -->
 		</div>
-
 	</div>
 </body>
 <script defer type="text/javascript" charset="utf-8">
