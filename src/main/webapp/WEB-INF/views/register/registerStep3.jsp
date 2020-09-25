@@ -21,39 +21,11 @@
 <body class="text-center">
 	<div class="container" id="main">
 		<div class="jumbotron">
-			<h4 class="mb-4">약관</h4>
-			<form class="form-signin" method="post"
-				action="${pageContext.request.contextPath}/register/step2"
-				onsubmit="return clickEvent()">
-				<input type="text" class="form-control" name="name" placeholder="이름"
-					id="name" /> <br class="mb-4"> <input type="number"
-					class="form-control" name="sid" placeholder="학번" id="sid" />
-
-				<br class="mb-4">
-
-				<div class="row">
-					<div class="col-md-6 mb-3">
-
-						<input type="password" class="form-control" name="password"
-							id="userPassword" placeholder="비밀번호" />
-					</div>
-					<div class="col-md-6 mb-3">
-						<input type="password" class="form-control" id="checkPassword"
-							placeholder="비밀번호 확인" />
-
-					</div>
-				</div>
-
-				<br class="mb-1"> <input type="number" class="form-control"
-					name="grade" id="grade" placeholder="학년" /> <br
-					class="mb-4"> <input type="text" class="form-control"
-					name="subject" id="subject" placeholder="학과" /> <br
-					class="mb-4">
-
-				<hr class="mb-4">
-				<button id="btn_register" class="btn btn-primary btn-lg btn-block"
-					type="submit">회원가입</button>
-			</form>
+			<h4 class="mb-4">회원가입 완료</h4>
+			
+			<button id="btn_register" class="btn btn-primary btn-lg btn-block"
+				type="submit">로그인</button>
+			
 		</div>
 
 	</div>

@@ -7,9 +7,8 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import spring.ChangePasswordService;
-import spring.MemberDao;
-import spring.MemberRegisterService;
+import springBulletinBoard.dao.StudentDAO;
+import springBulletinBoard.service.StudentRegisterService;
 
 @Configuration
 @EnableTransactionManagement
@@ -19,7 +18,7 @@ public class StudentConfig {
 	public DataSource dataSource() {
 		DataSource ds = new DataSource();
 		ds.setDriverClassName("com.mysql.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://localhost/spring5fs?characterEncoding=utf8");
+		ds.setUrl("jdbc:mysql://localhost/springbulletinboard?characterEncoding=utf8");
 		ds.setUsername("root");
 		ds.setPassword("1111");
 		ds.setInitialSize(2);
@@ -38,19 +37,19 @@ public class StudentConfig {
 	}
 
 	@Bean
-	public MemberDao memberDao() {
-		return new MemberDao(dataSource());
+	public StudentDAO studentDAO() {
+		return new StudentDAO(dataSource());
 	}
 
 	@Bean
-	public MemberRegisterService memberRegSvc() {
-		return new MemberRegisterService(memberDao());
+	public StudentRegisterService studentRegSvc() {
+		return new StudentRegisterService(studentDAO());
 	}
-
-	@Bean
-	public ChangePasswordService changePwdSvc() {
-		ChangePasswordService pwdSvc = new ChangePasswordService();
-		pwdSvc.setMemberDao(memberDao());
-		return pwdSvc;
-	}
+//
+//	@Bean
+//	public ChangePasswordService changePwdSvc() {
+//		ChangePasswordService pwdSvc = new ChangePasswordService();
+//		pwdSvc.setMemberDao(memberDao());
+//		return pwdSvc;
+//	}
 }

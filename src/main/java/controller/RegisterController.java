@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import spring.DuplicateMemberException;
-import spring.MemberRegisterService;
+import springBulletinBoard.exception.DuplicateStudentException;
+import springBulletinBoard.service.StudentRegisterService;
 import springBulletinBoard.vo.RegisterRequest;
 
 @Controller
 public class RegisterController {
-	MemberRegisterService memberRegisterService;
+	StudentRegisterService studentRegisterService;
 
-	public void setMemberRegisterService(MemberRegisterService memberRegisterService) {
-		this.memberRegisterService = memberRegisterService;
+	public void setStudentRegisterService(StudentRegisterService studentRegisterService) {
+		this.studentRegisterService = studentRegisterService;
 	}
 
 	@RequestMapping("/register/step1")
@@ -46,10 +46,10 @@ public class RegisterController {
 	@PostMapping("/register/step3")
 	public String registerStep3(RegisterRequest regReq) {
 		try {
-			memberRegisterService.regist(regReq);
-			return "register/step3";
-		} catch (DuplicateMemberException ex) {
-			return "register/step2";
+			studentRegisterService.regist(regReq);
+			return "register/registerStep3";
+		} catch (DuplicateStudentException ex) {
+			return "register/registerStep2";
 		}
 	}
 
