@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -17,7 +18,7 @@
 </style>
 <script defer src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script defer src="js/bootstrap.js"></script>
-<title>Spring 게시판</title>
+<title><spring:message code="login.title" /></title>
 </head>
 <body class="text-center">
 
@@ -25,40 +26,38 @@
 		<div class="jumbotron">
 			<form action="${pageContext.request.contextPath}/login"
 				class="form-signin" method="post">
-				<h1 class="h3 mb-3 font-weight-bold">Spring Bulletin Board</h1>
+				<h1 class="h3 mb-3 font-weight-bold">
+					<spring:message code="login.banner" />
+				</h1>
 				<c:choose>
 					<c:when test="${empty sessionScope.login1}">
 						<input type="number" name="sid" class="form-control"
-							placeholder="학번"
-							oninvalid="this.setCustomValidity('아이디를 입력해주세요')" autofocus=""
+							placeholder="<spring:message code="sid"/>" autofocus="autofocus"
 							style="margin-top: 50px">
 						<input type="password" name="password" class="form-control"
-							placeholder="비밀번호"
-							oninvalid="this.setCustomValidity('비밀번호를 입력해주세요')">
+							placeholder="<spring:message code="password"/>">
 						<div class="checkbox mb-3">
-							<input type="checkbox" name="memory" value="memory"> 아이디
-							기억하기
+							<input type="checkbox" name="memory" value="memory">
+							<spring:message code="login.memory" />
 						</div>
 					</c:when>
 
 					<c:otherwise>
 						<input type="number" name="sid" class="form-control"
-							placeholder="학번" value="${sessionScope.login1}"
-							oninvalid="this.setCustomValidity('아이디를 입력해주세요')" autofocus=""
-							style="margin-top: 50px">
+							placeholder="<spring:message code="sid"/>" value="${sessionScope.login1}"
+							autofocus="autofocus" style="margin-top: 50px">
 						<input type="password" name="password" class="form-control"
-							placeholder="비밀번호"
-							oninvalid="this.setCustomValidity('비밀번호를 입력해주세요')">
+							placeholder="<spring:message code="password"/>">
 						<div class="checkbox mb-3">
 							<input type="checkbox" name="memory" value="memory" checked>
-							아이디 기억하기
+							<spring:message code="login.memory" />
 						</div>
 					</c:otherwise>
 				</c:choose>
 
-				<button class="btn btn-lg btn-primary btn-block" type="submit">로그인</button>
-				<a href="${pageContext.request.contextPath}/register/step1">회원가입</a>
-				<p class="mt-5 mb-3 text-muted">© 21660003 강지호</p>
+				<button class="btn btn-lg btn-primary btn-block" type="submit"><spring:message code="go.login" /></button>
+				<a href="${pageContext.request.contextPath}/register/step1"><spring:message code="go.register" /></a>
+				<p class="mt-5 mb-3 text-muted"><spring:message code="login.right"/></p>
 			</form>
 		</div>
 	</div>
