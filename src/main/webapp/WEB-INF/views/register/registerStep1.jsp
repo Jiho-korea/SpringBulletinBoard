@@ -24,6 +24,7 @@
 	<div class="container" id="main">
 		<div class="jumbotron">
 			<h4 class="mb-4">약관</h4>
+		
 			<form class="form-signin" method="post"
 				action="${pageContext.request.contextPath}/register/step2"
 				onsubmit="return clickEvent()">
@@ -48,5 +49,5 @@
 		</div>
 
 	</div>
-	</script>
+	
 </html>

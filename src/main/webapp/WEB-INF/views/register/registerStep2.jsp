@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +25,56 @@
 	<div class="container" id="main">
 		<div class="jumbotron">
 			<h4 class="mb-4">회원가입</h4>
+			<form:form action="${pageContext.request.contextPath}/register/step3"
+				method="post" cssClass="form-signin"
+				modelAttribute="registerRequest" onsubmit="return clickEvent()">
+
+				<form:input path="name" cssClass="form-control" placeholder="이름" />
+
+				<br class="mb-4" />
+				<input type="number" class="form-control" name="sid"
+					placeholder="학번" id="sid" />
+				<br class="mb-4" />
+
+				<div class="row">
+					<div class="col-md-6 mb-3">
+
+						<form:password path="password" cssClass="form-control"
+							placeholder="비밀번호" />
+
+					</div>
+					<div class="col-md-6 mb-3">
+						<form:password path="confirmPassword" cssClass="form-control"
+							placeholder="비밀번호 확인" />
+
+					</div>
+				</div>
+
+				<br class="mb-1" />
+				<input type="number" class="form-control"
+					name="grade" id="grade" placeholder="학년"/>
+				<br class="mb-4">
+
+				<form:input path="subject" cssClass="form-control" placeholder="학과" />
+
+				<br class="mb-4" />
+
+				<hr class="mb-4" />
+				<button id="btn_register" class="btn btn-primary btn-lg btn-block"
+					type="submit">회원가입</button>
+			</form:form>
+
+
+			<!-- 
 			<form class="form-signin" method="post"
 				action="${pageContext.request.contextPath}/register/step3"
 				onsubmit="return clickEvent()">
+
+
 				<input type="text" class="form-control" name="name" placeholder="이름"
-					id="name" /> <br class="mb-4"> <input type="number"
-					class="form-control" name="sid" placeholder="학번" id="sid" /> <br
-					class="mb-4">
+					id="name" value="${registerRequest.name}" /> <br class="mb-4" /> <input
+					type="number" class="form-control" name="sid" placeholder="학번"
+					id="sid" value="${registerRequest.sid}" /> <br class="mb-4" />
 
 				<div class="row">
 					<div class="col-md-6 mb-3">
@@ -45,15 +89,17 @@
 					</div>
 				</div>
 
-				<br class="mb-1"> <input type="number" class="form-control"
-					name="grade" id="grade" placeholder="학년" /> <br class="mb-4">
-				<input type="text" class="form-control" name="subject" id="subject"
-					placeholder="학과" /> <br class="mb-4">
+				<br class="mb-1" /> <input type="number" class="form-control"
+					name="grade" id="grade" placeholder="학년"
+					value="${registerRequest.grade}" /> <br class="mb-4"> <input
+					type="text" class="form-control" name="subject" id="subject"
+					placeholder="학과" value="${registerRequest.subject}" /> <br
+					class="mb-4" />
 
-				<hr class="mb-4">
+				<hr class="mb-4" />
 				<button id="btn_register" class="btn btn-primary btn-lg btn-block"
 					type="submit">회원가입</button>
-			</form>
+			</form> -->
 		</div>
 
 	</div>
