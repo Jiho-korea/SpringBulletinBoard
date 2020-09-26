@@ -25,11 +25,11 @@ a, a:hover {
 
 </head>
 <body>
-	<%--
-	<c:import url="included/top.jsp">
+
+	<c:import url="../included/top.jsp">
 		<c:param value="main" name="type" />
 	</c:import>
- 	--%>
+ 	
  
 	<div class="container" style="margin-top: 60px">
 		<div class="jumbotron">
