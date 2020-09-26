@@ -8,6 +8,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import springBulletinBoard.dao.StudentDAO;
+import springBulletinBoard.service.LoginService;
 import springBulletinBoard.service.StudentRegisterService;
 
 @Configuration
@@ -45,7 +46,11 @@ public class StudentConfig {
 	public StudentRegisterService studentRegSvc() {
 		return new StudentRegisterService(studentDAO());
 	}
-//
+
+	@Bean
+	public LoginService loginSvc() {
+		return new LoginService(studentDAO());
+	}
 //	@Bean
 //	public ChangePasswordService changePwdSvc() {
 //		ChangePasswordService pwdSvc = new ChangePasswordService();

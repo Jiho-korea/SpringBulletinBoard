@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -24,41 +25,53 @@
 
 	<div class="container" id="main">
 		<div class="jumbotron">
-			<form action="${pageContext.request.contextPath}/login"
-				class="form-signin" method="post">
+			<form:form action="${pageContext.request.contextPath}/login/login"
+				method="post" cssClass="form-signin" modelAttribute="loginRequest">
 				<h1 class="h3 mb-3 font-weight-bold">
 					<spring:message code="login.banner" />
 				</h1>
 				<c:choose>
-					<c:when test="${empty sessionScope.login1}">
-						<input type="number" name="sid" class="form-control"
-							placeholder="<spring:message code="sid"/>" autofocus="autofocus"
-							style="margin-top: 50px">
-						<input type="password" name="password" class="form-control"
-							placeholder="<spring:message code="password"/>">
+					<c:when test="${empty sessionScope.memory}">
+						<label style="margin-top: 20px"><spring:message
+								code="sid" /> <form:input path="sid" cssClass="form-control" />
+						</label>
+
+						<label><spring:message code="password" /> <form:password
+								path="password" cssClass="form-control" /> </label>
+
 						<div class="checkbox mb-3">
-							<input type="checkbox" name="memory" value="memory">
+							<form:checkbox path="memory" value="true" />
 							<spring:message code="login.memory" />
 						</div>
 					</c:when>
 
 					<c:otherwise>
-						<input type="number" name="sid" class="form-control"
-							placeholder="<spring:message code="sid"/>" value="${sessionScope.login1}"
-							autofocus="autofocus" style="margin-top: 50px">
-						<input type="password" name="password" class="form-control"
-							placeholder="<spring:message code="password"/>">
+
+						<label style="margin-top: 50px"><spring:message
+								code="sid" /> <form:input path="sid" cssClass="form-control"
+								value="${sessionScope.memory}" /> </label>
+
+						<label><spring:message code="password" /> <form:password
+								path="password" cssClass="form-control" /> </label>
+
 						<div class="checkbox mb-3">
-							<input type="checkbox" name="memory" value="memory" checked>
+							<form:checkbox path="memory" value="true" />
 							<spring:message code="login.memory" />
 						</div>
+
 					</c:otherwise>
 				</c:choose>
 
-				<button class="btn btn-lg btn-primary btn-block" type="submit"><spring:message code="go.login" /></button>
-				<a href="${pageContext.request.contextPath}/register/step1"><spring:message code="go.register" /></a>
-				<p class="mt-5 mb-3 text-muted"><spring:message code="login.right"/></p>
-			</form>
+				<button class="btn btn-lg btn-primary btn-block" type="submit">
+					<spring:message code="go.login" />
+				</button>
+				<a href="${pageContext.request.contextPath}/register/step1"><spring:message
+						code="go.register" /></a>
+				<p class="mt-5 mb-3 text-muted">
+					<spring:message code="login.right" />
+				</p>
+			</form:form>
+
 		</div>
 	</div>
 

@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 
 import controller.LoginController;
 import controller.RegisterController;
+import springBulletinBoard.service.LoginService;
 import springBulletinBoard.service.StudentRegisterService;
 
 @Configuration
@@ -13,9 +14,13 @@ public class ControllerConfig {
 	@Autowired
 	StudentRegisterService studentRegSvc;
 
+	@Autowired
+	LoginService loginSvc;
+
 	@Bean
 	public LoginController loginController() {
 		LoginController loginController = new LoginController();
+		loginController.setLoginService(loginSvc);
 		return loginController;
 	}
 
