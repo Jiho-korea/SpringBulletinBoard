@@ -18,7 +18,6 @@
 a, a:hover {
 	color: #000000;
 	text-decoration: none;
-	'
 }
 </style>
 <title>메인페이지</title>
@@ -35,7 +34,7 @@ a, a:hover {
 		<div class="jumbotron">
 			<div class="container">
 				<h1>웹 사이트 소개</h1>
-				<p>JSP, Servlet, MyBatis를 활용하여 만든 게시판 입니다.</p>
+				<p>Spring Framework를 이용하여 만든 게시판 입니다.</p>
 				<p>
 					<a class="btn btn-primary btn-pull" href="#">Github</a>
 				<p>
