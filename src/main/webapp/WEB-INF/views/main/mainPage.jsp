@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 
 <!DOCTYPE html>
 <html>
@@ -20,7 +21,7 @@ a, a:hover {
 	text-decoration: none;
 }
 </style>
-<title>메인페이지</title>
+<title><spring:message code="main.title" /></title>
 
 </head>
 <body>
@@ -33,10 +34,10 @@ a, a:hover {
 	<div class="container" style="margin-top: 60px">
 		<div class="jumbotron">
 			<div class="container">
-				<h1>웹 사이트 소개</h1>
-				<p>Spring Framework를 이용하여 만든 게시판 입니다.</p>
+				<h1><spring:message code="main.banner" /></h1>
+				<p><spring:message code="main.description" /></p>
 				<p>
-					<a class="btn btn-primary btn-pull" href="#">Github</a>
+					<a class="btn btn-primary btn-pull" href="#"><spring:message code="main.link" /></a>
 				<p>
 			</div>
 		</div>
