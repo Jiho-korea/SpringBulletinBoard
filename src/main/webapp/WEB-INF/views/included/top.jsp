@@ -33,7 +33,8 @@ a, a:hover {
 <body>
 	<nav class="navbar navbar-expand navbar-light bg-light">
 		<a class="navbar-brand"
-			href="${pageContext.request.contextPath}/from/main"><spring:message code="top.banner" /></a>
+			href="${pageContext.request.contextPath}/from/main"><spring:message
+				code="top.banner" /></a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse"
 			data-target="#navbarsExample02" aria-controls="navbarsExample02"
 			aria-expanded="false" aria-label="Toggle navigation">
@@ -46,28 +47,33 @@ a, a:hover {
 				<c:choose>
 					<c:when test="${param.type eq 'board'}">
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/from/main"><spring:message code="top.main" /> <span
-								class="sr-only">(current)</span></a></li>
+							href="${pageContext.request.contextPath}/from/main"><spring:message
+									code="top.main" /> <span class="sr-only">(current)</span></a></li>
 						<li class="nav-item active"><a class="nav-link"
-							href="${pageContext.request.contextPath}/from/board"><spring:message code="top.board" /></a></li>
+							href="${pageContext.request.contextPath}/from/board"><spring:message
+									code="top.board" /></a></li>
 					</c:when>
 
 					<c:when test="${param.type eq 'main'}">
 						<li class="nav-item active"><a class="nav-link"
-							href="${pageContext.request.contextPath}/from/main"><spring:message code="top.main" /> <span
-								class="sr-only">(current)</span></a></li>
+							href="${pageContext.request.contextPath}/from/main"><spring:message
+									code="top.main" /> <span class="sr-only">(current)</span></a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/from/board"><spring:message code="top.board" /></a></li>
+							href="${pageContext.request.contextPath}/from/board"><spring:message
+									code="top.board" /></a></li>
 					</c:when>
 				</c:choose>
-				
+
 			</ul>
 
 			<ul class="navbar-nav right">
-				<li class="nav-item active"><a class="nav-link"><spring:message code="top.welcome" />
-				</a></li>
+				<li class="nav-item active"><a class="nav-link"><spring:message
+							code="top.welcome">
+							<spring:argument value="${loginRequest.sid}" />
+						</spring:message> </a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/from/logout"><spring:message code="top.logout" /></a></li>
+					href="${pageContext.request.contextPath}/from/logout"><spring:message
+							code="top.logout" /></a></li>
 			</ul>
 		</div>
 	</nav>

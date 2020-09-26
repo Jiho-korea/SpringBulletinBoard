@@ -12,7 +12,6 @@
 	width: 40%;
 	margin-top: 50px;
 }
-
 a, a:hover {
 	color: #000000;
 	text-decoration: none;
