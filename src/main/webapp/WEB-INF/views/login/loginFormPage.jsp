@@ -32,9 +32,8 @@
 				</h1>
 				<c:choose>
 					<c:when test="${empty sessionScope.memory}">
-						<label style="margin-top: 20px"><spring:message
-								code="sid" /> <form:input path="sid" cssClass="form-control" />
-						</label>
+						<label style="margin-top: 20px"><spring:message code="sid" />
+							<form:input path="sid" cssClass="form-control" /> </label>
 
 						<label><spring:message code="password" /> <form:password
 								path="password" cssClass="form-control" /> </label>
@@ -47,8 +46,8 @@
 
 					<c:otherwise>
 
-						<label style="margin-top: 50px"><spring:message
-								code="sid" /> <form:input path="sid" cssClass="form-control"
+						<label style="margin-top: 50px"><spring:message code="sid" />
+							<form:input path="sid" cssClass="form-control"
 								value="${sessionScope.memory}" /> </label>
 
 						<label><spring:message code="password" /> <form:password

@@ -12,6 +12,7 @@
 	width: 40%;
 	margin-top: 50px;
 }
+
 a, a:hover {
 	color: #000000;
 	text-decoration: none;
@@ -25,15 +26,20 @@ a, a:hover {
 	<c:import url="../included/top.jsp">
 		<c:param value="main" name="type" />
 	</c:import>
- 	
- 
+
+
 	<div class="container" style="margin-top: 60px">
 		<div class="jumbotron">
 			<div class="container">
-				<h1><spring:message code="main.banner" /></h1>
-				<p><spring:message code="main.description" /></p>
+				<h1>
+					<spring:message code="main.banner" />
+				</h1>
 				<p>
-					<a class="btn btn-primary btn-pull" href="#"><spring:message code="main.link" /></a>
+					<spring:message code="main.description" />
+				</p>
+				<p>
+					<a class="btn btn-primary btn-pull" href="#"><spring:message
+							code="main.link" /></a>
 				<p>
 			</div>
 		</div>

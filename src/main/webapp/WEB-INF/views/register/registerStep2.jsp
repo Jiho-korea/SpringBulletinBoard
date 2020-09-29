@@ -56,8 +56,8 @@
 				<label><spring:message code="grade" /> <input type="number"
 					class="form-control" name="grade" id="grade" /></label>
 				<br class="mb-4">
-				<label> <spring:message code="subject" />
-					<form:input path="subject" cssClass="form-control" />
+				<label> <spring:message code="subject" /> <form:input
+						path="subject" cssClass="form-control" />
 				</label>
 
 

@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,18 +26,20 @@
 <body class="text-center">
 	<div class="container" id="main">
 		<div class="jumbotron">
-			<h4 class="mb-4"><spring:message code="register.done.banner" /></h4>
+			<h4 class="mb-4">
+				<spring:message code="register.done.banner" />
+			</h4>
 			<p>
-				<spring:message code="register.done" >
-					<spring:argument value="${registerRequest.name}"/>
-					<spring:argument value="${registerRequest.sid}"/>
+				<spring:message code="register.done">
+					<spring:argument value="${registerRequest.name}" />
+					<spring:argument value="${registerRequest.sid}" />
 				</spring:message>
-				
+
 			</p>
 			<br class="mb-4" />
 			<hr class="mb-4" />
-			 <a class="btn btn-primary"
-				href="<c:url value='/login/login'/>" role="button"><spring:message code="go.login"/></a>
+			<a class="btn btn-primary" href="<c:url value='/login/login'/>"
+				role="button"><spring:message code="go.login" /></a>
 
 		</div>
 
