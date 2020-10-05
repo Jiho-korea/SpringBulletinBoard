@@ -14,14 +14,14 @@ public class StudentRegisterService {
 	}
 
 	public int regist(RegisterRequest req) {
-		Student student = studentDAO.selectBySid(req.getSid());
+		Student student = studentDAO.selectBySid(Integer.parseInt(req.getSid()));
 
 		if (student != null) {
 			throw new DuplicateStudentException("dup sid : " + req.getSid());
 		}
 
-		Student newStudent = new Student(req.getSid(), req.getName(), req.getPassword(), req.getGrade(),
-				req.getSubject());
+		Student newStudent = new Student(Integer.parseInt(req.getSid()), req.getName(), req.getPassword(),
+				Integer.parseInt(req.getGrade()), req.getSubject());
 
 		int result = studentDAO.insertStudent(newStudent);
 		if (result == 1) {

@@ -32,32 +32,37 @@
 				method="post" cssClass="form-signin"
 				modelAttribute="registerRequest" onsubmit="return clickEvent()">
 				<label><spring:message code="name" /> <form:input
-						path="name" cssClass="form-control" /> </label>
+						path="name" cssClass="form-control" /> <form:errors path="name" /></label>
 				<br class="mb-4" />
-				<label><spring:message code="sid" /> <input type="number"
-					class="form-control" name="sid" id="sid" /></label>
+				<label><spring:message code="sid" /><form:input
+						path="sid" cssClass="form-control" />
+				<form:errors path="sid" /></label>
 
 				<br class="mb-4" />
 
 				<div class="row">
 					<div class="col-md-6 mb-1">
 						<label><spring:message code="password" /> <form:password
-								path="password" cssClass="form-control" /> </label>
+								path="password" cssClass="form-control" /> <form:errors
+								path="password" /></label>
 
 
 					</div>
 					<div class="col-md-6 mb-1">
 						<label><spring:message code="confirmPassword" /> <form:password
-								path="confirmPassword" cssClass="form-control" /></label>
+								path="confirmPassword" cssClass="form-control" />
+							<form:errors path="confirmPassword" /></label>
 					</div>
 				</div>
 
 				<br class="mb-4" />
-				<label><spring:message code="grade" /> <input type="number"
-					class="form-control" name="grade" id="grade" /></label>
+				<label><spring:message code="grade" /> <form:input
+						path="grade" cssClass="form-control" />
+				<form:errors path="grade" /></label>
 				<br class="mb-4">
 				<label> <spring:message code="subject" /> <form:input
 						path="subject" cssClass="form-control" />
+					<form:errors path="subject" />
 				</label>
 
 
@@ -73,28 +78,28 @@
 	</div>
 </body>
 <script defer type="text/javascript" charset="utf-8">
-	function clickEvent() {
-		var password = $("#password").val();
-		var confirmPassword = $("#confirmPassword").val();
-		if (password != confirmPassword) {
-			alert("비밀번호를 다시 확인해주세요.");
-			return false;
-		} else if ($("#name").val() == "") {
-			alert("이름을 입력해주세요.");
-			return false;
-		} else if ($("#sid").val() == "") {
-			alert("학번을 입력해주세요.");
-			return false;
-		} else if ($("#password").val() == "") {
-			alert("비밀번호를 입력해주세요.");
-			return false;
-		} else if ($("#grade").val() == "") {
-			alert("학년을 입력해주세요.");
-			return false;
-		} else if ($("#subject").val() == "") {
-			alert("학과를 입력해주세요.");
-			return false;
-		}
-	}
+	//	function clickEvent() {
+	//		var password = $("#password").val();
+	//		var confirmPassword = $("#confirmPassword").val();
+	//		if (password != confirmPassword) {
+	//			alert("비밀번호를 다시 확인해주세요.");
+	//			return false;
+	//		} else if ($("#name").val() == "") {
+	//			alert("이름을 입력해주세요.");
+	//			return false;
+	//		} else if ($("#sid").val() == "") {
+	//			alert("학번을 입력해주세요.");
+	//			return false;
+	//		} else if ($("#password").val() == "") {
+	//			alert("비밀번호를 입력해주세요.");
+	//			return false;
+	//		} else if ($("#grade").val() == "") {
+	//			alert("학년을 입력해주세요.");
+	//			return false;
+	//		} else if ($("#subject").val() == "") {
+	//			alert("학과를 입력해주세요.");
+	//			return false;
+	//		}
+	//	}
 </script>
 </html>

@@ -1,12 +1,22 @@
 package springBulletinBoard.vo;
 
-public class RegisterRequest {
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.NotBlank;
+
+public class RegisterRequest {
+	@NotBlank
 	private String name;
-	private int sid;
+	@NotBlank
+	@Size(min = 8)
+	private String sid;
+	@NotBlank
 	private String password;
+	@NotBlank
 	private String confirmPassword;
-	private int grade;
+	@NotBlank
+	private String grade;
+	@NotBlank
 	private String subject;
 
 	public String getName() {
@@ -17,11 +27,11 @@ public class RegisterRequest {
 		this.name = name;
 	}
 
-	public int getSid() {
+	public String getSid() {
 		return sid;
 	}
 
-	public void setSid(int sid) {
+	public void setSid(String sid) {
 		this.sid = sid;
 	}
 
@@ -41,11 +51,11 @@ public class RegisterRequest {
 		this.confirmPassword = confirmPassword;
 	}
 
-	public int getGrade() {
+	public String getGrade() {
 		return grade;
 	}
 
-	public void setGrade(int grade) {
+	public void setGrade(String grade) {
 		this.grade = grade;
 	}
 
