@@ -1,9 +1,18 @@
 package springBulletinBoard.vo;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotBlank;
+
 public class LoginRequest {
 
+	@NotBlank
+	@Size(min = 8)
 	private String sid;
+
+	@NotBlank
 	private String password;
+
 	private boolean memory;
 
 	public String getSid() {

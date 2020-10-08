@@ -30,13 +30,16 @@
 				<h1 class="h3 mb-3 font-weight-bold">
 					<spring:message code="login.banner" />
 				</h1>
+				<form:errors/>
 				<c:choose>
 					<c:when test="${empty sessionScope.memory}">
 						<label style="margin-top: 20px"><spring:message code="sid" />
-							<form:input path="sid" cssClass="form-control" /> </label>
+							<form:input path="sid" cssClass="form-control" /> <form:errors
+								path="sid" /> </label>
 
 						<label><spring:message code="password" /> <form:password
-								path="password" cssClass="form-control" /> </label>
+								path="password" cssClass="form-control" /> <form:errors
+								path="password" /> </label>
 
 						<div class="checkbox mb-3">
 							<form:checkbox path="memory" value="true" />

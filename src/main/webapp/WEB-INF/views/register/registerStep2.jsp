@@ -55,7 +55,6 @@
 					</div>
 				</div>
 
-				<br class="mb-4" />
 				<label><spring:message code="grade" /> <form:input
 						path="grade" cssClass="form-control" />
 				<form:errors path="grade" /></label>
