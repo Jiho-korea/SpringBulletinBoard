@@ -38,7 +38,7 @@ a, a:hover {
 					<spring:message code="main.description" />
 				</p>
 				<p>
-					<a class="btn btn-primary btn-pull" href="#"><spring:message
+					<a class="btn btn-primary btn-pull" href="https://github.com/Jiho-korea/SpringBulletinBoard" target="_blank"><spring:message
 							code="main.link" /></a>
 				<p>
 			</div>
