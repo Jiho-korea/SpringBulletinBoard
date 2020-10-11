@@ -1,5 +1,6 @@
 package controller;
 
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -26,13 +27,19 @@ public class LoginController {
 	}
 
 	@PostMapping("/login/login")
-	public String login(@Valid LoginRequest loginRequest, Errors errors) {
+	public String login(@Valid LoginRequest loginRequest, Errors errors, HttpSession session) {
 		if (errors.hasErrors()) {
 			return "login/loginFormPage";
 		}
 
 		try {
 			Student student = loginService.login(loginRequest);
+			if (loginRequest.isMemory() == true) {
+				session.setAttribute("memory", student.getSid());
+			} else {
+				session.removeAttribute("memory");
+			}
+			session.setAttribute("login", student);
 			return "main/mainPage";
 		} catch (StudentNotFoundException e) {
 			errors.reject("notfound");

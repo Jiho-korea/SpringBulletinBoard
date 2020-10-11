@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
@@ -30,6 +31,11 @@ public class MvcConfig implements WebMvcConfigurer {
 		ms.addBasenames("message.error");
 		ms.setDefaultEncoding("UTF-8");
 		return ms;
+	}
+
+	@Override
+	public void addViewControllers(ViewControllerRegistry registry) {
+
 	}
 
 }
