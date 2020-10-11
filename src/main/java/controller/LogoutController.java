@@ -11,7 +11,7 @@ import springBulletinBoard.vo.LoginRequest;
 public class LogoutController {
 	@RequestMapping("/logout")
 	public String boardList(LoginRequest loginRequest, HttpSession session) {
-		session.removeAttribute("login");
-		return "login/loginFormPage";
+		session.invalidate();
+		return "redirect:/main";
 	}
 }

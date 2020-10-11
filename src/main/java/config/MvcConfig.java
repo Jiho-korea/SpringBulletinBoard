@@ -16,12 +16,13 @@ import interceptor.LoginCheckInterceptor;
 @Configuration
 @EnableWebMvc
 public class MvcConfig implements WebMvcConfigurer {
+	// 인터셉터
+
 	// 로그인 인터셉터
 	@Bean
 	public LoginCheckInterceptor loginCheckInterceptor() {
 		return new LoginCheckInterceptor();
 	}
-
 	//
 
 	@Override

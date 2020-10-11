@@ -30,39 +30,20 @@
 				<h1 class="h3 mb-3 font-weight-bold">
 					<spring:message code="login.banner" />
 				</h1>
-				<form:errors/>
-				<c:choose>
-					<c:when test="${empty sessionScope.memory}">
-						<label style="margin-top: 20px"><spring:message code="sid" />
-							<form:input path="sid" cssClass="form-control" /> <form:errors
-								path="sid" /> </label>
+				<form:errors />
 
-						<label><spring:message code="password" /> <form:password
-								path="password" cssClass="form-control" /> <form:errors
-								path="password" /> </label>
+				<label style="margin-top: 20px"><spring:message code="sid" />
+					<form:input path="sid" cssClass="form-control" /> <form:errors
+						path="sid" /> </label>
 
-						<div class="checkbox mb-3">
-							<form:checkbox path="memory" value="true" />
-							<spring:message code="login.memory" />
-						</div>
-					</c:when>
+				<label><spring:message code="password" /> <form:password
+						path="password" cssClass="form-control" /> <form:errors
+						path="password" /> </label>
 
-					<c:otherwise>
-
-						<label style="margin-top: 50px"><spring:message code="sid" />
-							<form:input path="sid" cssClass="form-control"
-								value="${sessionScope.memory}" /> </label>
-
-						<label><spring:message code="password" /> <form:password
-								path="password" cssClass="form-control" /> </label>
-
-						<div class="checkbox mb-3">
-							<form:checkbox path="memory" value="true" />
-							<spring:message code="login.memory" />
-						</div>
-
-					</c:otherwise>
-				</c:choose>
+				<div class="checkbox mb-3">
+					<form:checkbox path="memory"/>
+					<spring:message code="login.memory" />
+				</div>
 
 				<button class="btn btn-lg btn-primary btn-block" type="submit">
 					<spring:message code="go.login" />
