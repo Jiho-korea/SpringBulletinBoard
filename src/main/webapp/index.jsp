@@ -8,7 +8,7 @@
 </head>
 <body>
 	<script defer>
-		location.href = "login/login"
+		location.href = "main"
 	</script>
 </body>
 </html>

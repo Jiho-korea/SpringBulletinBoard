@@ -25,10 +25,14 @@ a, a:hover {
 </head>
 
 <body>
-	<c:import url="included/top.jsp">
+	<c:import url="../included/top.jsp">
 		<c:param value="board" name="type" />
 	</c:import>
-
+	
+	<div class="container" style="margin-top: 60px">
+		게시판
+	</div>
+	<!-- 
 	<div class="container" style="margin-top: 60px">
 		<div class="row">
 			<table class="table table-striped"
@@ -101,7 +105,7 @@ a, a:hover {
 
 		</div>
 	</div>
-
+	 -->
 </body>
 
 </html>

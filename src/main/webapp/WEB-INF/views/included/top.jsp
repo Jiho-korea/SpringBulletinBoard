@@ -50,7 +50,7 @@ a, a:hover {
 							href="${pageContext.request.contextPath}/main"><spring:message
 									code="top.main" /> <span class="sr-only">(current)</span></a></li>
 						<li class="nav-item active"><a class="nav-link"
-							href="${pageContext.request.contextPath}/from/board"><spring:message
+							href="${pageContext.request.contextPath}/board/list"><spring:message
 									code="top.board" /></a></li>
 					</c:when>
 
@@ -59,7 +59,7 @@ a, a:hover {
 							href="${pageContext.request.contextPath}/main"><spring:message
 									code="top.main" /> <span class="sr-only">(current)</span></a></li>
 						<li class="nav-item"><a class="nav-link"
-							href="${pageContext.request.contextPath}/from/board"><spring:message
+							href="${pageContext.request.contextPath}/board/list"><spring:message
 									code="top.board" /></a></li>
 					</c:when>
 				</c:choose>

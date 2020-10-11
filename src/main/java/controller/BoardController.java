@@ -15,6 +15,6 @@ public class BoardController {
 
 	@RequestMapping("/board/list")
 	public String boardList() {
-		return "register/registerStep1";
+		return "board/boardPage";
 	}
 }

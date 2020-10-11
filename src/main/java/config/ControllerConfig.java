@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import controller.BoardController;
 import controller.LoginController;
 import controller.LogoutController;
 import controller.RegisterController;
@@ -36,6 +37,12 @@ public class ControllerConfig {
 	public LogoutController logoutController() {
 		LogoutController logoutController = new LogoutController();
 		return logoutController;
+	}
+
+	@Bean
+	public BoardController boardController() {
+		BoardController boardController = new BoardController();
+		return boardController;
 	}
 
 }
