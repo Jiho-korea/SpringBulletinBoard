@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import controller.LoginController;
+import controller.LogoutController;
 import controller.RegisterController;
 import springBulletinBoard.service.LoginService;
 import springBulletinBoard.service.StudentRegisterService;
@@ -29,6 +30,12 @@ public class ControllerConfig {
 		RegisterController registerController = new RegisterController();
 		registerController.setStudentRegisterService(studentRegSvc);
 		return registerController;
+	}
+
+	@Bean
+	public LogoutController logoutController() {
+		LogoutController logoutController = new LogoutController();
+		return logoutController;
 	}
 
 }

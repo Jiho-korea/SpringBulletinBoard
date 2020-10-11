@@ -72,7 +72,7 @@ a, a:hover {
 							<spring:argument value="${sessionScope.login.name}" />
 						</spring:message> </a></li>
 				<li class="nav-item"><a class="nav-link"
-					href="${pageContext.request.contextPath}/from/logout"><spring:message
+					href="${pageContext.request.contextPath}/logout"><spring:message
 							code="top.logout" /></a></li>
 			</ul>
 		</div>

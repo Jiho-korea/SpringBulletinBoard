@@ -34,12 +34,12 @@ public class LoginController {
 
 		try {
 			Student student = loginService.login(loginRequest);
+			session.setAttribute("login", student);
 			if (loginRequest.isMemory() == true) {
 				session.setAttribute("memory", student.getSid());
 			} else {
 				session.removeAttribute("memory");
 			}
-			session.setAttribute("login", student);
 			return "main/mainPage";
 		} catch (StudentNotFoundException e) {
 			errors.reject("notfound");
