@@ -9,6 +9,7 @@ import controller.LoginController;
 import controller.LogoutController;
 import controller.RegisterController;
 import springBulletinBoard.service.LoginService;
+import springBulletinBoard.service.PostListService;
 import springBulletinBoard.service.StudentRegisterService;
 
 @Configuration
@@ -18,6 +19,9 @@ public class ControllerConfig {
 
 	@Autowired
 	LoginService loginSvc;
+
+	@Autowired
+	PostListService postListService;
 
 	@Bean
 	public LoginController loginController() {
@@ -42,6 +46,7 @@ public class ControllerConfig {
 	@Bean
 	public BoardController boardController() {
 		BoardController boardController = new BoardController();
+		boardController.setPostListService(postListService);
 		return boardController;
 	}
 

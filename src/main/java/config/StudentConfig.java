@@ -7,8 +7,10 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import springBulletinBoard.dao.PostDAO;
 import springBulletinBoard.dao.StudentDAO;
 import springBulletinBoard.service.LoginService;
+import springBulletinBoard.service.PostListService;
 import springBulletinBoard.service.StudentRegisterService;
 
 @Configuration
@@ -43,6 +45,11 @@ public class StudentConfig {
 	}
 
 	@Bean
+	public PostDAO postDAO() {
+		return new PostDAO(dataSource());
+	}
+
+	@Bean
 	public StudentRegisterService studentRegSvc() {
 		return new StudentRegisterService(studentDAO());
 	}
@@ -50,6 +57,11 @@ public class StudentConfig {
 	@Bean
 	public LoginService loginSvc() {
 		return new LoginService(studentDAO());
+	}
+
+	@Bean
+	public PostListService postListSvc() {
+		return new PostListService(postDAO());
 	}
 //	@Bean
 //	public ChangePasswordService changePwdSvc() {
